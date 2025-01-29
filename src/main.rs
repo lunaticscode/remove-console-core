@@ -9,13 +9,10 @@ fn main() {
     let pattern = format!(r"\s*console\.({})\s*\(.*?\);?",log_levels.join("|"));
     
     let regex = Regex::new(&pattern).unwrap();
-    
+
     let removed_console_code = regex.replace_all(&source_code, "");
     
     let removed_unicode_code = removed_console_code.replace(r"\n", "").replace(r"\t", "").replace(r"\r", "").replace(r"\s", "");
-
-    let input = r#"import { jsx } from \"react/jsx-runtime\";\nimport { StrictMode } from \"react\";\n\timport { createRoot } from \"react-dom/client\";\r\n"#;
-    println!("{}", input.escape_unicode().to_string());
 
     println!("{}", removed_unicode_code);
 }
