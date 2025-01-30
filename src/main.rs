@@ -12,7 +12,13 @@ fn main() {
 
     let removed_console_code = regex.replace_all(&source_code, "");
     
-    let removed_unicode_code = removed_console_code.replace(r"\n", "").replace(r"\t", "").replace(r"\r", "").replace(r"\s", "");
+    let removed_unicode_code = removed_console_code
+                                .replace(r"\n", "")
+                                .replace(r"\t", "")
+                                .replace(r"\r", "")
+                                .replace(r"\s", "")
+                                .replace(r"\v", "")
+                                .replace(r"\b", "");
 
     println!("{}", removed_unicode_code);
 }
