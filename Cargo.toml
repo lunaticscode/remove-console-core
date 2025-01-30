@@ -1,7 +1,16 @@
 [package]
 name = "remove-console-core"
-version = "0.1.0"
+version = "0.1.1"
 edition = "2021"
+description = "A Rust library for removing console log statements from source code."
+repository = "https://github.com/lunaticscode/vite-remove-console"
+license = "MIT"
+authors = ["Insoo Park <lunatics384@gmail.com>"]
+readme = "README.md"
+keywords = ["console", "regex", "removal", "remove-console"]
+categories = ["development-tools", "text-processing"]
+publish = false
+rust-version = "1.83.0"
 
 [dependencies]
 regex = "1.11.1"
